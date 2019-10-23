@@ -1,9 +1,9 @@
-const mongoose = require('mongoose')
+var mongoose = require('mongoose')
 
-const Schema = mongoose.Schema
+var Schema = mongoose.Schema
 
-const BookInstanceSchema = new Schema({
-  book: { type: Schema.Types.ObjectId, ref: 'Book', required: true },
+var BookInstanceSchema = new Schema({
+  book: { type: Schema.Types.ObjectId, ref: 'Book', required: true }, //reference to the associated book
   imprint: { type: String, required: true },
   status: {
     type: String,
@@ -19,5 +19,5 @@ BookInstanceSchema.virtual('url').get(function() {
   return '/catalog/bookinstance/' + this._id
 })
 
-// Export model
+//Export model
 module.exports = mongoose.model('BookInstance', BookInstanceSchema)
