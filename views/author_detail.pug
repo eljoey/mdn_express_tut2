@@ -15,4 +15,9 @@ block content
         dd #{book.summary}
 
       else 
-        p This authro has no books.
+        p This author has no books.
+
+  hr
+
+  p
+    a(href=author.url+'/delete') Delete Author
