@@ -27,7 +27,6 @@ BookInstanceSchema.virtual('due_back_formatted').get(function() {
 
 // Virtual to formate due_back_date for form entry
 BookInstanceSchema.virtual('due_back_form_format').get(function() {
-  console.log(moment(this.due_back).format('YYYY-MM-DD'))
   return moment(this.due_back).format('YYYY-MM-DD')
 })
 //Export model
