@@ -36,10 +36,24 @@ AuthorSchema.virtual('date_of_birth_formatted').get(function() {
     : ''
 })
 
-// Virtual for formatted authors date_of_birth
+// Virtual for formatted authors date_of_death
 AuthorSchema.virtual('date_of_death_formatted').get(function() {
   return this.date_of_death
     ? moment(this.date_of_death).format('MMM Do, YYYY')
+    : ''
+})
+
+// Virtual to put authors Date_of_birth in a format accepted by forms
+AuthorSchema.virtual('date_of_birth_form_format').get(function() {
+  return this.date_of_birth
+    ? moment(this.date_of_birth).format('YYYY-MM-DD')
+    : ''
+})
+
+// Virtual to put authors Date_of_death in a format accepted by forms
+AuthorSchema.virtual('date_of_death_form_format').get(function() {
+  return this.date_of_death
+    ? moment(this.date_of_death).format('YYYY-MM-DD')
     : ''
 })
 

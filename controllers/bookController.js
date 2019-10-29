@@ -124,13 +124,13 @@ exports.book_create_post = [
   body('title', 'Title must not be empty')
     .isLength({ min: 1 })
     .trim(),
-  body('title', 'Author must not be empty')
+  body('author', 'Author must not be empty')
     .isLength({ min: 1 })
     .trim(),
-  body('title', 'Summary must not be empty')
+  body('summary', 'Summary must not be empty')
     .isLength({ min: 1 })
     .trim(),
-  body('title', 'ISBN must not be empty')
+  body('isbn', 'ISBN must not be empty')
     .isLength({ min: 1 })
     .trim(),
 
