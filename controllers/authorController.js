@@ -93,7 +93,7 @@ exports.author_create_post = [
 
     if (!errors.isEmpty()) {
       // There are errors. Render form again with sanitized values/error messages
-      res.render('author-form', {
+      res.render('author_form', {
         title: 'Create Author',
         author: req.body,
         errors: errors.array()
