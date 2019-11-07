@@ -122,8 +122,8 @@ exports.book_create_post = [
 
   // Validate fields
   body('title', 'Title must not be empty')
-    .isLength({ min: 1 })
-    .trim(),
+    .trim()
+    .isLength({ min: 1 }),
   body('author', 'Author must not be empty')
     .isLength({ min: 1 })
     .trim(),
@@ -157,10 +157,10 @@ exports.book_create_post = [
       async.parallel(
         {
           authors: callback => {
-            Authors.find(callback)
+            Author.find(callback)
           },
           genres: callback => {
-            Genres.find(callback)
+            Genre.find(callback)
           }
         },
         (err, results) => {
