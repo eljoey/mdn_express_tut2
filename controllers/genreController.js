@@ -128,7 +128,7 @@ exports.genre_delete_get = function(req, res, next) {
         return next(err)
       }
 
-      if (results.genre_books === null) {
+      if (results.genre === null) {
         res.redirect('/catalog/genres')
       }
 
@@ -202,7 +202,7 @@ exports.genre_update_post = [
     .trim(),
 
   // Sanitation
-  body('genre').escape(),
+  body('name').escape(),
 
   (req, res, next) => {
     const errors = validationResult(req)
